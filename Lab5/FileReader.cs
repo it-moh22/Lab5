@@ -11,12 +11,7 @@ namespace WordUnscrambler
     {
         public string[] Read(string filename)
         {
-            // Your Code here!
-            //Melimtx on top >>>>>>>>>>>>>>>>>>>>>>>
-            //heyas
-            //batman
-
-            //halloooo
+           
 
             return null;
         }
