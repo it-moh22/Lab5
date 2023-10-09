@@ -53,13 +53,37 @@ namespace WordUnscrambler
             try
             {
                 var filename = Console.ReadLine();
+                Console.WriteLine("enter the name of the file where to find the matching word" );
+                var filematch = Console.ReadLine();
 
-                string[] wordList;
-                bool readSuccess = _fileReader.Read(filename, out wordList);
+                string[] target;
+                string[] word;
+                bool readSuccess = _fileReader.Read(filename, out target);
+                bool readSuccess2= _fileReader.Read(filematch, out word);
 
-                if (readSuccess)
+                if (readSuccess && readSuccess2)
                 {
-                    DisplayMatchedUnscrambledWords(wordList);
+                    foreach(string targets in target)
+                    {
+                        char[] targetsChar= targets.ToCharArray();
+                        Array.Sort(targetsChar);
+                        foreach (string words in word)
+                        {
+                            char[] wordsChar = words.ToCharArray();
+                            Array.Sort(wordsChar);
+
+                            bool isMatch = targetsChar.SequenceEqual(wordsChar); //to verify if they are in the same order
+
+                            if (isMatch)
+                            {
+                                Console.WriteLine($"The word '{targets}' matches!");
+                            }
+                            else
+                            {
+                                Console.WriteLine($"The word '{targets}' does not match.");
+                            }
+                        }
+                    }
                 }
                 else
                 {
