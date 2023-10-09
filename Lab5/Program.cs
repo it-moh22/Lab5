@@ -50,25 +50,72 @@ namespace WordUnscrambler
 
         private static void ExecuteScrambledWordsInFileScenario()
         {
-            var filename = Console.ReadLine();
-            string[] scrambledWords = _fileReader.Read(filename);
-            DisplayMatchedUnscrambledWords(scrambledWords);
+            try
+            {
+                Console.WriteLine("Enter full path including the file name: ");
+                var filename = Console.ReadLine();
+
+                string[] wordList;
+                bool readSuccess = _fileReader.Read(filename, out wordList);
+
+                if (readSuccess)
+                {
+                    DisplayMatchedUnscrambledWords(wordList);
+                }
+                else
+                {
+                    Console.WriteLine("Unable to read the specified file.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
         }
 
         private static void ExecuteScrambledWordsManualEntryScenario()
         {
+            try
+            {
+                Console.WriteLine("Enter word(s) manually (separated by commas if multiple): ");
+                string input = Console.ReadLine();
+
+                // Split the input into individual words
+                string[] scrambledWords = input.Split(',');
+
+                // Remove leading/trailing whitespaces from each word
+                for (int i = 0; i < scrambledWords.Length; i++)
+                {
+                    scrambledWords[i] = scrambledWords[i].Trim();
+                }
+
+                // Unscramble the words and display the results
+                DisplayMatchedUnscrambledWords(scrambledWords);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred while processing manual input: " + ex.Message);
+            }
+
         }
 
         private static void DisplayMatchedUnscrambledWords(string[] scrambledWords)
+
         {
-            string[] wordList = _fileReader.Read("words.txt");
+            string[] wordList;
+            bool readSuccess = _fileReader.Read("words.txt", out wordList);
 
-             //List<MatchedWord> matchedWords = new List<MatchedWord>();
+            if (readSuccess)
+            {
+                List<MatchedWord> matchedWord = _wordMatcher.Match(scrambledWords, wordList);
 
-            List<MatchedWord> matchedWord = _wordMatcher.Match(scrambledWords, wordList);
-
-            //Extesion method to display
-            Ext_PrintMehod.PrintItem(matchedWord);
+                // Extension method to display
+                Ext_PrintMehod.PrintItem(matchedWord);
+            }
+            else
+            {
+                Console.WriteLine("Unable to read the word list file.");
+            }
 
         }
     }
