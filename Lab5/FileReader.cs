@@ -12,8 +12,6 @@ namespace WordUnscrambler
         public string[] Read(string filename)
         {
            
-
-            return null;
         }
     }
 }

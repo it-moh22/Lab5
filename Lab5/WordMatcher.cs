@@ -12,19 +12,44 @@ namespace WordUnscrambler
         {
             List<MatchedWord> matchedWords = new List<MatchedWord>();
 
-            // Implement code here.
-            // Work with "scrambledWords" and "matchedWords".
-
-            MatchedWord BuildMatchedWord(string scrambledWord, string word)
+            foreach (string scrambledWords2 in scrambledWords)
             {
-                // Build a matched-word object here, so that you can return it.
+                foreach (string word in wordList)
+                {
+                    if (scrambledWords2.Equals(word))
+                    {
+                        MatchedWord matchedWord = BuildMatchedWord(scrambledWords2, word);
+                        matchedWords.Add(matchedWord);
+                    }
 
-                //return matchedWord;
-                return new MatchedWord();  // Delete this line when done.
+                    return matchedWords;
+
+                }
+
+
+
+
+                // Implement code here.
+                // Work with "scrambledWords" and "matchedWords".
+
+                MatchedWord BuildMatchedWord(string scrambledWord, string word)
+                {
+                    // Build a matched-word object here, so that you can return it.
+                    MatchedWord matchedWord = new MatchedWord();
+
+
+
+                    //return matchedWord;
+                    return new MatchedWord();  // Delete this line when done.
+                }
+
+
             }
-
             return matchedWords;
-        } 
+        }
+       
     }
-
 }
+
+
+
