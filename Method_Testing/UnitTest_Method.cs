@@ -7,8 +7,16 @@ namespace Method_Testing
     public class UnitTest_Method
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestDisplayMatchedUnscrambledWords()
         {
+            // Arrange
+
+            // Act
+            // Use appropriate input
+
+            // Assert
+            // Assert.AreEqual(expectedResult, actualResult);
+
         }
     }
 }

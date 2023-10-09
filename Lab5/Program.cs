@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Globalization;
+using Lab5;
 
 namespace WordUnscrambler
 {
@@ -62,18 +63,12 @@ namespace WordUnscrambler
         {
             string[] wordList = _fileReader.Read("words.txt");
 
-            List<MatchedWord> matchedWords = new List<MatchedWord>();
+             //List<MatchedWord> matchedWords = new List<MatchedWord>();
 
-                List<MatchedWord> matchedWord = _wordMatcher.Match(scrambledWords, wordList);
-                
+            List<MatchedWord> matchedWord = _wordMatcher.Match(scrambledWords, wordList);
+
             //Extesion method to display
-
-                
-        
-
-
-
-            //call a word matcher method to get a list of structs of matched words.
+            Ext_PrintMehod.PrintItem(matchedWord);
 
         }
     }
