@@ -77,7 +77,6 @@ namespace WordUnscrambler
         {
             try
             {
-                Console.WriteLine("Enter word(s) manually (separated by commas if multiple): ");
                 string input = Console.ReadLine();
 
                 // Split the input into individual words
