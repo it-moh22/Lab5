@@ -8,19 +8,32 @@ namespace WordUnscrambler
 {
     class WordMatcher
     {
-        public List<MatchedWord> Match(string[] scrambledWords, string[] wordList)
+        public List<MatchedWord> Match(string[] target, string[] word)
         {
             List<MatchedWord> matchedWords = new List<MatchedWord>();
 
-            foreach (string scrambledWords2 in scrambledWords)
+            foreach (string targets in target)
             {
-                foreach (string word in wordList)
+                char[] targetsChar = targets.ToCharArray();
+                Array.Sort(targetsChar);
+                foreach (string words in word)
                 {
-                    if (scrambledWords2.Equals(word))
+                    char[] wordsChar = words.ToCharArray();
+                    Array.Sort(wordsChar);
+
+                    bool isMatch = targetsChar.SequenceEqual(wordsChar); //to verify if they are in the same order
+
+                    if (isMatch)
                     {
-                        MatchedWord matchedWord = BuildMatchedWord(scrambledWords2, word);
-                        matchedWords.Add(matchedWord);
+                        Console.WriteLine($"The word '{targets}' matches!");
                     }
+                    else
+                    {
+                        Console.WriteLine($"The word '{targets}' does not match.");
+                    }
+
+
+
 
                     return matchedWords;
 
@@ -32,7 +45,7 @@ namespace WordUnscrambler
                 // Implement code here.
                 // Work with "scrambledWords" and "matchedWords".
 
-                MatchedWord BuildMatchedWord(string scrambledWord, string word)
+                MatchedWord BuildMatchedWord(string scrambledWord, string wording)
                 {
                     // Build a matched-word object here, so that you can return it.
                     MatchedWord matchedWord = new MatchedWord();
@@ -47,9 +60,7 @@ namespace WordUnscrambler
             }
             return matchedWords;
         }
-       
     }
-}
 
 
 

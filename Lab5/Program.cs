@@ -63,27 +63,8 @@ namespace WordUnscrambler
 
                 if (readSuccess && readSuccess2)
                 {
-                    foreach(string targets in target)
-                    {
-                        char[] targetsChar= targets.ToCharArray();
-                        Array.Sort(targetsChar);
-                        foreach (string words in word)
-                        {
-                            char[] wordsChar = words.ToCharArray();
-                            Array.Sort(wordsChar);
-
-                            bool isMatch = targetsChar.SequenceEqual(wordsChar); //to verify if they are in the same order
-
-                            if (isMatch)
-                            {
-                                Console.WriteLine($"The word '{targets}' matches!");
-                            }
-                            else
-                            {
-                                Console.WriteLine($"The word '{targets}' does not match.");
-                            }
-                        }
-                    }
+                    WordMatcher wordMatcher = new WordMatcher();
+                    wordMatcher.Match(target, word);
                 }
                 else
                 {
