@@ -52,7 +52,6 @@ namespace WordUnscrambler
         {
             try
             {
-                Console.WriteLine("Enter full path including the file name: ");
                 var filename = Console.ReadLine();
 
                 string[] wordList;
@@ -77,24 +76,42 @@ namespace WordUnscrambler
         {
             try
             {
+   
                 string input = Console.ReadLine();
+                Console.WriteLine("Enter a matching word: ");
+                string matched = Console.ReadLine();
 
-                // Split the input into individual words
-                string[] scrambledWords = input.Split(',');
+                string[] inputWords = input.Split(','); 
+                char[] matchedChar = matched.ToCharArray();
 
-                // Remove leading/trailing whitespaces from each word
-                for (int i = 0; i < scrambledWords.Length; i++)
+                foreach (string scrambledWord in inputWords)
                 {
-                    scrambledWords[i] = scrambledWords[i].Trim();
-                }
+                    char[] scrambledChars = scrambledWord.Trim().ToCharArray(); 
+                    Array.Sort(scrambledChars);
+                    Array.Sort(matchedChar);
 
-                // Unscramble the words and display the results
-                DisplayMatchedUnscrambledWords(scrambledWords);
+                    bool isMatch = scrambledChars.SequenceEqual(matchedChar); //to verify if they are in the same order
+
+                    if (isMatch)
+                    {
+                        Console.WriteLine($"The word '{scrambledWord}' matches!");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"The word '{scrambledWord}' does not match.");
+                    }
+                }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("An error occurred while processing manual input: " + ex.Message);
             }
+
+
+
+
+
+
 
         }
 
