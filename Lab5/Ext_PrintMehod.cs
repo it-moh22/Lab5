@@ -19,6 +19,7 @@ namespace Lab5
                 Console.WriteLine($"Matched Word: {matchedWord.Word}");
                 Console.WriteLine($"Is Match: {matchedWord.IsMatch}");
             }
+            Console.WriteLine("");
             
         }
 

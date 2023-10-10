@@ -91,8 +91,8 @@ namespace WordUnscrambler
                 string[] matchedArray = matched.Split(); 
 
                
-                    WordMatcher wordMatcher = new WordMatcher();
-                    wordMatcher.Match(inputWords,matchedArray);
+                 WordMatcher wordMatcher = new WordMatcher();
+                 wordMatcher.Match(inputWords,matchedArray);
                 
             }
             catch (Exception ex)
