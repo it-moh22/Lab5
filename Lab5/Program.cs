@@ -86,26 +86,13 @@ namespace WordUnscrambler
                 Console.WriteLine("Enter a matching word: ");
                 string matched = Console.ReadLine();
 
-                string[] inputWords = input.Split(','); 
-                char[] matchedChar = matched.ToCharArray();
+                string[] inputWords = input.Split(',');
+                string[] matchedArray = matched.Split(); 
 
-                foreach (string scrambledWord in inputWords)
-                {
-                    char[] scrambledChars = scrambledWord.Trim().ToCharArray(); 
-                    Array.Sort(scrambledChars);
-                    Array.Sort(matchedChar);
-
-                    bool isMatch = scrambledChars.SequenceEqual(matchedChar); //to verify if they are in the same order
-
-                    if (isMatch)
-                    {
-                        Console.WriteLine($"The word '{scrambledWord}' matches!");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"The word '{scrambledWord}' does not match.");
-                    }
-                }
+               
+                    WordMatcher wordMatcher = new WordMatcher();
+                    wordMatcher.Match(inputWords,matchedArray);
+                
             }
             catch (Exception ex)
             {
