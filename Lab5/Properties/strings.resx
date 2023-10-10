@@ -118,33 +118,36 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="FalseFile" xml:space="preserve">
-    <value />
+    <value>Unable to read the specified file.</value>
   </data>
   <data name="FalseOption" xml:space="preserve">
-    <value />
+    <value>The entered option was not recognized. Please retry.</value>
   </data>
   <data name="IsMatch" xml:space="preserve">
-    <value />
+    <value>Is Match: </value>
   </data>
   <data name="MatchedWord" xml:space="preserve">
+    <value>Matched Words: </value>
+  </data>
+  <data name="MatchingWordPrompt" xml:space="preserve">
     <value />
   </data>
   <data name="OptionF" xml:space="preserve">
     <value>Enter full path including the file name:</value>
   </data>
   <data name="OptionF2" xml:space="preserve">
-    <value />
+    <value>Enter a file to try the matching: </value>
   </data>
   <data name="OptionM" xml:space="preserve">
     <value>Enter word(s) manually (separated by commas if multiple):</value>
   </data>
   <data name="OptionM2" xml:space="preserve">
-    <value />
+    <value>Enter a matching word:</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Enter scrambled word(s) manually or as a file: F - file / M - manual</value>
   </data>
   <data name="ScrambledWord" xml:space="preserve">
-    <value />
+    <value>Scrambled Words: </value>
   </data>
 </root>

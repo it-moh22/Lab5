@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Globalization;
 using Lab5;
+using System.Runtime.Remoting.Channels;
 
 namespace WordUnscrambler
 {
@@ -24,7 +25,7 @@ namespace WordUnscrambler
             {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-CA");
             }
-            if (lang.Equals("fr"))
+            else if (lang.Equals("fr"))
             {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("fr-CA");
             }
@@ -39,24 +40,24 @@ namespace WordUnscrambler
                 bool validation = false; // Initialize to false initially
                 while (!validation)
                 {
-                    Console.WriteLine("Enter scrambled word(s) manually or as a file: F - file / M - manual");
+                    Console.WriteLine(Lab5.Properties.strings.Options);
                     
                     String option = Console.ReadLine() ?? throw new Exception("String is empty");
 
                     switch (option.ToUpper())
                     {
                         case "F":
-                            Console.WriteLine("Enter full path including the file name: ");
+                            Console.WriteLine(Lab5.Properties.strings.OptionF);
                             ExecuteScrambledWordsInFileScenario();
                             validation = true; 
                             break;
                         case "M":
-                            Console.WriteLine("Enter word(s) manually (separated by commas if multiple): ");
+                            Console.WriteLine(Lab5.Properties.strings.OptionM);
                             ExecuteScrambledWordsManualEntryScenario();
                             validation = true; 
                             break;
                         default:
-                            Console.WriteLine("The entered option was not recognized.");
+                            Console.WriteLine(Lab5.Properties.strings.FalseOption);
                             validation = false;
                      
                             break;
@@ -78,7 +79,7 @@ namespace WordUnscrambler
             try
             {
                 var filename = Console.ReadLine();
-                "Enter a file to try the matching: ".AskUser();
+                Lab5.Properties.strings.OptionF2.AskUser();
                 var filematch = Console.ReadLine();
 
                 string[] target;
@@ -95,7 +96,7 @@ namespace WordUnscrambler
                 }
                 else
                 {
-                    Console.WriteLine("Unable to read the specified file.");
+                    Console.WriteLine(Lab5.Properties.strings.FalseFile);
                 }
             }
             catch (Exception ex)
@@ -110,7 +111,7 @@ namespace WordUnscrambler
             {
    
                 string input = Console.ReadLine();
-                Console.WriteLine("Enter a matching word: ");
+                Console.WriteLine(Lab5.Properties.strings.OptionM2);
                 string matched = Console.ReadLine();
 
                 string[] inputWords = input.Split(',');
@@ -134,13 +135,13 @@ namespace WordUnscrambler
             WordMatcher wordMatcher = new WordMatcher();
             List<MatchedWord> matchedWords = wordMatcher.Match(scrambledWords, wordList);
 
-            Console.WriteLine("Matched Words:");
+            Console.WriteLine(Lab5.Properties.strings.MatchedWord);
 
             foreach (MatchedWord matchedWord in matchedWords)
             {
-                Console.WriteLine($"Scrambled Word: {matchedWord.ScrambledWord}");
-                Console.WriteLine($"Matched Word: {matchedWord.Word}");
-                Console.WriteLine($"Is Match: {matchedWord.IsMatch}");
+                Console.WriteLine(Lab5.Properties.strings.ScrambledWord + matchedWord.ScrambledWord);
+                Console.WriteLine(Lab5.Properties.strings.MatchedWord + matchedWord.Word);
+                Console.WriteLine(Lab5.Properties.strings.IsMatch +  matchedWord.IsMatch);
                 Console.WriteLine();
             }
 

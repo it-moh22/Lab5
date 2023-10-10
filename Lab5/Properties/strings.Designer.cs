@@ -61,7 +61,7 @@ namespace Lab5.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Unable to read the specified file..
         /// </summary>
         internal static string FalseFile {
             get {
@@ -70,7 +70,7 @@ namespace Lab5.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to The entered option was not recognized. Please retry..
         /// </summary>
         internal static string FalseOption {
             get {
@@ -79,7 +79,7 @@ namespace Lab5.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Is Match: .
         /// </summary>
         internal static string IsMatch {
             get {
@@ -88,11 +88,20 @@ namespace Lab5.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Matched Words: .
         /// </summary>
         internal static string MatchedWord {
             get {
                 return ResourceManager.GetString("MatchedWord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string MatchingWordPrompt {
+            get {
+                return ResourceManager.GetString("MatchingWordPrompt", resourceCulture);
             }
         }
         
@@ -106,7 +115,7 @@ namespace Lab5.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Enter a file to try the matching: .
         /// </summary>
         internal static string OptionF2 {
             get {
@@ -124,7 +133,7 @@ namespace Lab5.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Enter a matching word:.
         /// </summary>
         internal static string OptionM2 {
             get {
@@ -142,7 +151,7 @@ namespace Lab5.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Scrambled Words: .
         /// </summary>
         internal static string ScrambledWord {
             get {
