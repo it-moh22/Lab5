@@ -18,37 +18,44 @@ namespace WordUnscrambler
         {
             try
             {
-                Console.WriteLine("Enter scrambled word(s) manually or as a file: F - file / M - manual");
-
-                String option = Console.ReadLine() ?? throw new Exception("String is empty");
-
-                switch (option.ToUpper())
+                bool validation = false; // Initialize to false initially
+                while (!validation)
                 {
-                    case "F":
-                        Console.WriteLine("Enter full path including the file name: ");
-                        ExecuteScrambledWordsInFileScenario();
-                        break;
-                    case "M":
-                        Console.WriteLine("Enter word(s) manually (separated by commas if multiple): ");
-                        ExecuteScrambledWordsManualEntryScenario();
-                        break;
-                    default:
-                        Console.WriteLine("The entered option was not recognized.");
-                        break;
+                    Console.WriteLine("Enter scrambled word(s) manually or as a file: F - file / M - manual");
+                    
+                    String option = Console.ReadLine() ?? throw new Exception("String is empty");
+
+                    switch (option.ToUpper())
+                    {
+                        case "F":
+                            Console.WriteLine("Enter full path including the file name: ");
+                            ExecuteScrambledWordsInFileScenario();
+                            validation = true; 
+                            break;
+                        case "M":
+                            Console.WriteLine("Enter word(s) manually (separated by commas if multiple): ");
+                            ExecuteScrambledWordsManualEntryScenario();
+                            validation = true; 
+                            break;
+                        default:
+                            Console.WriteLine("The entered option was not recognized.");
+                            validation = false;
+                     
+                            break;
+                    }
+                    
+
+
+                    Console.ReadLine();
                 }
-
-                Console.ReadLine();
-
-
             }
             catch (Exception ex)
             {
                 Console.WriteLine("The program will be terminated." + ex.Message);
-
             }
         }
 
-        private static void ExecuteScrambledWordsInFileScenario()
+            private static void ExecuteScrambledWordsInFileScenario()
         {
             try
             {
