@@ -63,9 +63,9 @@ namespace WordUnscrambler
 
                 if (readSuccess && readSuccess2)
                 {
-                    DisplayMatchedUnscrambledWords(target, word);
-                    //WordMatcher wordMatcher = new WordMatcher();
-                    //wordMatcher.Match(target, word);
+                    //DisplayMatchedUnscrambledWords(target, word);
+                    WordMatcher wordMatcher = new WordMatcher();
+                    wordMatcher.Match(target, word);
                 }
                 else
                 {
