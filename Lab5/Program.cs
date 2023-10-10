@@ -17,11 +17,33 @@ namespace WordUnscrambler
 
         static void Main(string[] args)
         {
+            bool confirmation = false; // the validation for the while loop
 
-            Console.WriteLine("Choose a language between the following: en for english or fr for french ");
-            String lang = Console.ReadLine();
+            while (!confirmation)
+            {
+                Console.WriteLine("Choose a language between the following: 'en' for english or 'fr' for french ");
+                String lang = Console.ReadLine();
 
-            if (lang.Equals("en"))
+                switch (lang.ToUpper())
+                {
+                    case "EN":
+                        Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-CA");
+                        confirmation = true; // Set confirmation to true to exit the loop
+                        break;
+                    case "FR":
+                        Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("fr-CA");
+                        confirmation = true; // Set confirmation to true to exit the loop
+                        break;
+                    default:
+                        Console.WriteLine("This is not a valid language. Please try again.");
+                        confirmation= false;
+                        break;
+                }
+            }
+
+
+
+            /*if (lang.Equals("en"))
             {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-CA");
             }
@@ -33,7 +55,7 @@ namespace WordUnscrambler
             {
                 Console.WriteLine("This is not a valid language. Please try again.");
                 Environment.Exit(0);
-            }
+            }*/
 
             try
             {
