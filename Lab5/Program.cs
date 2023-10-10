@@ -66,6 +66,7 @@ namespace WordUnscrambler
                     //DisplayMatchedUnscrambledWords(target, word);
                     WordMatcher wordMatcher = new WordMatcher();
                     wordMatcher.Match(target, word);
+                    DisplayMatchedUnscrambledWords(target, word);
                 }
                 else
                 {
@@ -93,7 +94,8 @@ namespace WordUnscrambler
                
                  WordMatcher wordMatcher = new WordMatcher();
                  wordMatcher.Match(inputWords,matchedArray);
-                
+                DisplayMatchedUnscrambledWords(inputWords, matchedArray);
+
             }
             catch (Exception ex)
             {
@@ -104,10 +106,21 @@ namespace WordUnscrambler
 
         private static void DisplayMatchedUnscrambledWords(string[] scrambledWords, string[] wordList)
         {
-            List<MatchedWord> matchedWords = _wordMatcher.Match(scrambledWords, wordList);
+            WordMatcher wordMatcher = new WordMatcher();
+            List<MatchedWord> matchedWords = wordMatcher.Match(scrambledWords, wordList);
 
-            // Call the extension method to display matched words
-            matchedWords.PrintMatchedWords();
+            Console.WriteLine("Matched Words:");
+
+            foreach (MatchedWord matchedWord in matchedWords)
+            {
+                Console.WriteLine($"Scrambled Word: {matchedWord.ScrambledWord}");
+                Console.WriteLine($"Matched Word: {matchedWord.Word}");
+                Console.WriteLine($"Is Match: {matchedWord.IsMatch}");
+                Console.WriteLine();
+            }
+
+
+
         }
 
 
