@@ -16,6 +16,24 @@ namespace WordUnscrambler
 
         static void Main(string[] args)
         {
+
+            Console.WriteLine("Choose a language between the following: en for english or fr for french ");
+            String lang = Console.ReadLine();
+
+            if (lang.Equals("en"))
+            {
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-CA");
+            }
+            if (lang.Equals("fr"))
+            {
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("fr-CA");
+            }
+            else
+            {
+                Console.WriteLine("This is not a valid language. Please try again.");
+                Environment.Exit(0);
+            }
+
             try
             {
                 bool validation = false; // Initialize to false initially
@@ -60,7 +78,7 @@ namespace WordUnscrambler
             try
             {
                 var filename = Console.ReadLine();
-                "enter a file to try the matchin".AskUser();
+                "Enter a file to try the matching: ".AskUser();
                 var filematch = Console.ReadLine();
 
                 string[] target;

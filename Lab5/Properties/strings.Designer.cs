@@ -63,9 +63,90 @@ namespace Lab5.Properties {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string prompt {
+        internal static string FalseFile {
             get {
-                return ResourceManager.GetString("prompt", resourceCulture);
+                return ResourceManager.GetString("FalseFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string FalseOption {
+            get {
+                return ResourceManager.GetString("FalseOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string IsMatch {
+            get {
+                return ResourceManager.GetString("IsMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string MatchedWord {
+            get {
+                return ResourceManager.GetString("MatchedWord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter full path including the file name:.
+        /// </summary>
+        internal static string OptionF {
+            get {
+                return ResourceManager.GetString("OptionF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string OptionF2 {
+            get {
+                return ResourceManager.GetString("OptionF2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter word(s) manually (separated by commas if multiple):.
+        /// </summary>
+        internal static string OptionM {
+            get {
+                return ResourceManager.GetString("OptionM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string OptionM2 {
+            get {
+                return ResourceManager.GetString("OptionM2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter scrambled word(s) manually or as a file: F - file / M - manual.
+        /// </summary>
+        internal static string Options {
+            get {
+                return ResourceManager.GetString("Options", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string ScrambledWord {
+            get {
+                return ResourceManager.GetString("ScrambledWord", resourceCulture);
             }
         }
     }
