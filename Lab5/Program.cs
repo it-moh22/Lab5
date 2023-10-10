@@ -63,8 +63,9 @@ namespace WordUnscrambler
 
                 if (readSuccess && readSuccess2)
                 {
-                    WordMatcher wordMatcher = new WordMatcher();
-                    wordMatcher.Match(target, word);
+                    DisplayMatchedUnscrambledWords(target, word);
+                    //WordMatcher wordMatcher = new WordMatcher();
+                    //wordMatcher.Match(target, word);
                 }
                 else
                 {
@@ -99,11 +100,12 @@ namespace WordUnscrambler
 
                     if (isMatch)
                     {
+
                         Console.WriteLine($"The word '{scrambledWord}' matches!");
                     }
                     else
                     {
-                        Console.WriteLine($"The word '{scrambledWord}' does not match.");
+                       Console.WriteLine($"The word '{scrambledWord}' does not match.");
                     }
                 }
             }
@@ -112,15 +114,18 @@ namespace WordUnscrambler
                 Console.WriteLine("An error occurred while processing manual input: " + ex.Message);
             }
 
-
-
-
-
-
-
         }
 
-        private static void DisplayMatchedUnscrambledWords(string[] scrambledWords)
+        private static void DisplayMatchedUnscrambledWords(string[] scrambledWords, string[] wordList)
+        {
+            List<MatchedWord> matchedWords = _wordMatcher.Match(scrambledWords, wordList);
+
+            // Call the extension method to display matched words
+            matchedWords.PrintMatchedWords();
+        }
+
+
+        /*private static void DisplayMatchedUnscrambledWords(string[] scrambledWords)
 
         {
             string[] wordList;
@@ -131,13 +136,13 @@ namespace WordUnscrambler
                 List<MatchedWord> matchedWord = _wordMatcher.Match(scrambledWords, wordList);
 
                 // Extension method to display
-                Ext_PrintMehod.PrintItem(matchedWord);
+                Ext_PrintMehod.PrintMatchedWords(matchedWord);
             }
             else
             {
                 Console.WriteLine("Unable to read the word list file.");
             }
 
-        }
+        }*/
     }
 }

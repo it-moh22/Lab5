@@ -25,11 +25,12 @@ namespace WordUnscrambler
 
                     if (isMatch)
                     {
-                        Console.WriteLine($"The word '{targets}' matches!");
+                         Console.WriteLine($"The word '{targets}' matches!");
                     }
                     else
                     {
-                        Console.WriteLine($"The word '{targets}' does not match.");
+
+                         Console.WriteLine($"The word '{targets}' does not match.");
                     }
 
 
@@ -61,6 +62,7 @@ namespace WordUnscrambler
             return matchedWords;
         }
     }
+}
 
 
 
