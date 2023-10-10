@@ -12,7 +12,7 @@ namespace Lab5
     {
         public static void AskUser(this string message)
         {
-            Console.WriteLine(message);
+            Console.WriteLine(message); //prints a message for the user
         }
 
         /*public static void  PrintItem(List<MatchedWord> matchedWords)

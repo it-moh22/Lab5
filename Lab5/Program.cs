@@ -24,25 +24,25 @@ namespace WordUnscrambler
                 Console.WriteLine("Choose a language between the following: 'en' for english or 'fr' for french ");
                 String lang = Console.ReadLine();
 
-                switch (lang.ToUpper())
+                switch (lang.ToUpper()) //We did almost the same switch case of
+                                        //yours but we added the while loop to make
+                                        //sure the user can reput the inpuyt
                 {
                     case "EN":
                         Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-CA");
-                        confirmation = true; // Set confirmation to true to exit the loop
+                        confirmation = true; 
                         break;
                     case "FR":
                         Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("fr-CA");
-                        confirmation = true; // Set confirmation to true to exit the loop
+                        confirmation = true; 
                         break;
                     default:
                         Console.WriteLine("This is not a valid language. Please try again.");
-                        confirmation= false;
+                        confirmation= false; //If it reachs this part the boolean will activate the loop again
                         break;
                 }
             }
-
-
-
+            //This is good but if the user gets it wrong he cant retype the input
             /*if (lang.Equals("en"))
             {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-CA");
@@ -107,8 +107,8 @@ namespace WordUnscrambler
 
                     string[] target;
                     string[] word;
-                    bool readSuccess = _fileReader.Read(filename, out target);
-                    bool readSuccess2 = _fileReader.Read(filematch, out word);
+                    bool readSuccess = _fileReader.Read(filename, out target); //the output will be the target
+                    bool readSuccess2 = _fileReader.Read(filematch, out word);  //the output will be the target
                 while (!(readSuccess) || !(readSuccess2))
                 {
                     Console.WriteLine(Lab5.Properties.strings.NotFoundFile);
@@ -192,7 +192,7 @@ namespace WordUnscrambler
 
         }
 
-
+        //test this didnt work
         /*private static void DisplayMatchedUnscrambledWords(string[] scrambledWords)
 
         {
