@@ -111,14 +111,14 @@ namespace WordUnscrambler
             try
             {
                 string input = Console.ReadLine();
-                Console.WriteLine("the words you want to match are: " + input.ToString());
-                Console.WriteLine("do you want to continue? (y/n) ");
+                Console.WriteLine(Lab5.Properties.strings.WordsToMatch + input.ToString());
+                Console.WriteLine(Lab5.Properties.strings.Continuation);
                 string answer = Console.ReadLine();
                 while (answer == "n")
                 {
-                    Console.WriteLine("then re enter new words");
+                    Console.WriteLine(Lab5.Properties.strings.ReenterWords);
                     input = Console.ReadLine();
-                    Console.WriteLine("do you want to continue? (y/n) ");
+                    Console.WriteLine(Lab5.Properties.strings.Continuation);
                     answer = Console.ReadLine();
 
                 }

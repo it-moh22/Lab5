@@ -61,6 +61,15 @@ namespace Lab5.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you want to continue? (y/n): .
+        /// </summary>
+        internal static string Continuation {
+            get {
+                return ResourceManager.GetString("Continuation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unable to read the specified file..
         /// </summary>
         internal static string FalseFile {
@@ -93,15 +102,6 @@ namespace Lab5.Properties {
         internal static string MatchedWord {
             get {
                 return ResourceManager.GetString("MatchedWord", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string MatchingWordPrompt {
-            get {
-                return ResourceManager.GetString("MatchingWordPrompt", resourceCulture);
             }
         }
         
@@ -151,11 +151,29 @@ namespace Lab5.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter a new set of words:.
+        /// </summary>
+        internal static string ReenterWords {
+            get {
+                return ResourceManager.GetString("ReenterWords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Scrambled Words: .
         /// </summary>
         internal static string ScrambledWord {
             get {
                 return ResourceManager.GetString("ScrambledWord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The words you want to match are: .
+        /// </summary>
+        internal static string WordsToMatch {
+            get {
+                return ResourceManager.GetString("WordsToMatch", resourceCulture);
             }
         }
     }
