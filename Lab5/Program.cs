@@ -87,18 +87,26 @@ namespace WordUnscrambler
                     string[] word;
                     bool readSuccess = _fileReader.Read(filename, out target);
                     bool readSuccess2 = _fileReader.Read(filematch, out word);
-
-                if (readSuccess && readSuccess2)
+                while (!(readSuccess) || !(readSuccess2))
                 {
-                    //DisplayMatchedUnscrambledWords(target, word);
-                    WordMatcher wordMatcher = new WordMatcher();
+                    Console.WriteLine("I dont find any of the files ");
+                    Console.WriteLine("enter a file to find words");
+                    filename = Console.ReadLine();
+                    Lab5.Properties.strings.OptionF2.AskUser();
+                     filematch = Console.ReadLine();
+
+                  
+                     readSuccess = _fileReader.Read(filename, out target);
+                     readSuccess2 = _fileReader.Read(filematch, out word);
+                }
+
+
+                //DisplayMatchedUnscrambledWords(target, word);
+                WordMatcher wordMatcher = new WordMatcher();
                     wordMatcher.Match(target, word);
                     DisplayMatchedUnscrambledWords(target, word);
-                }
-                else
-                {
-                    Console.WriteLine(Lab5.Properties.strings.FalseFile);
-                }
+                
+                
             }
             catch (Exception ex)
             {
