@@ -20,6 +20,8 @@ namespace Lab5
                 Console.WriteLine($"Is Match: {matchedWord.IsMatch}");
                 Console.WriteLine(); // Add an empty line for better readability
             }
+            Console.WriteLine("");
+            
         }
 
         /*public static void  PrintItem(List<MatchedWord> matchedWords)
