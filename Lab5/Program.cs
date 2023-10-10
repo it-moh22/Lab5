@@ -76,16 +76,17 @@ namespace WordUnscrambler
 
             private static void ExecuteScrambledWordsInFileScenario()
         {
+
             try
             {
                 var filename = Console.ReadLine();
                 Lab5.Properties.strings.OptionF2.AskUser();
                 var filematch = Console.ReadLine();
 
-                string[] target;
-                string[] word;
-                bool readSuccess = _fileReader.Read(filename, out target);
-                bool readSuccess2= _fileReader.Read(filematch, out word);
+                    string[] target;
+                    string[] word;
+                    bool readSuccess = _fileReader.Read(filename, out target);
+                    bool readSuccess2 = _fileReader.Read(filematch, out word);
 
                 if (readSuccess && readSuccess2)
                 {
@@ -109,16 +110,21 @@ namespace WordUnscrambler
         {
             try
             {
+
    
                 string input = Console.ReadLine();
                 Console.WriteLine(Lab5.Properties.strings.OptionM2);
                 string matched = Console.ReadLine();
 
                 string[] inputWords = input.Split(',');
-                string[] matchedArray = matched.Split(); 
+                string[] matchedArray = matched.Split();
 
-               
-                 WordMatcher wordMatcher = new WordMatcher();
+           
+                
+                    
+
+
+                WordMatcher wordMatcher = new WordMatcher();
                  wordMatcher.Match(inputWords,matchedArray);
                 DisplayMatchedUnscrambledWords(inputWords, matchedArray);
 
