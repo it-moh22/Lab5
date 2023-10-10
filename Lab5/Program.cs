@@ -80,7 +80,7 @@ namespace WordUnscrambler
             try
             {
                 var filename = Console.ReadLine();
-                Lab5.Properties.strings.OptionF2.AskUser();
+                Lab5.Properties.strings.OptionF2.AskUser();  // extenstion method 
                 var filematch = Console.ReadLine();
 
                     string[] target;
