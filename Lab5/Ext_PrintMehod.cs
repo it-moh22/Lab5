@@ -12,20 +12,14 @@ namespace Lab5
     {
         public static void PrintMatchedWords(this List<MatchedWord> matchedWords)
         {
-            if (matchedWords.Count == 0)
-            {
-                Console.WriteLine("No matched words found.");
-                return;
-            }
-
-            Console.WriteLine("The Matched Words:");
+            Console.Write("The result : ");
             foreach (MatchedWord matchedWord in matchedWords)
             {
                 Console.WriteLine($"Scrambled Word: {matchedWord.ScrambledWord}");
                 Console.WriteLine($"Matched Word: {matchedWord.Word}");
                 Console.WriteLine($"Is Match: {matchedWord.IsMatch}");
-                Console.WriteLine();
             }
+            
         }
 
         /*public static void  PrintItem(List<MatchedWord> matchedWords)
