@@ -158,8 +158,6 @@ namespace WordUnscrambler
             WordMatcher wordMatcher = new WordMatcher();
             List<MatchedWord> matchedWords = wordMatcher.Match(scrambledWords, wordList);
 
-            Console.WriteLine(Lab5.Properties.strings.MatchedWord);
-
             foreach (MatchedWord matchedWord in matchedWords)
             {
                 Console.WriteLine(Lab5.Properties.strings.ScrambledWord + matchedWord.ScrambledWord);
