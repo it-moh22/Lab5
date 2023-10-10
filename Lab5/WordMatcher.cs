@@ -16,6 +16,7 @@ namespace WordUnscrambler
             {
                 char[] targetsChar = targets.ToCharArray();
                 Array.Sort(targetsChar);
+
                 foreach (string words in word)
                 {
                     char[] wordsChar = words.ToCharArray();
@@ -33,36 +34,39 @@ namespace WordUnscrambler
                          Console.WriteLine($"The word '{targets}' does not match.");
                     }
 
-
-
-
-                    return matchedWords;
-
                 }
-
-
-
-
-                // Implement code here.
-                // Work with "scrambledWords" and "matchedWords".
-
-                MatchedWord BuildMatchedWord(string scrambledWord, string wording)
-                {
-                    // Build a matched-word object here, so that you can return it.
-                    MatchedWord matchedWord = new MatchedWord();
-
-
-
-                    //return matchedWord;
-                    return new MatchedWord();  // Delete this line when done.
-                }
-
 
             }
+
+            return matchedWords;
+
+
+
+
+
+
+            // Implement code here.
+            // Work with "scrambledWords" and "matchedWords".
+
+            MatchedWord BuildMatchedWord(string scrambledWord, string wording)
+            {
+                // Build a matched-word object here, so that you can return it.
+                MatchedWord matchedWord = new MatchedWord();
+
+
+
+                //return matchedWord;
+                return new MatchedWord();  // Delete this line when done.
+            }
+
+
+
             return matchedWords;
         }
     }
 }
+
+
 
 
 
