@@ -27,16 +27,15 @@ namespace WordUnscrambler
 
                     if (isMatch)
                     {
-                         Console.WriteLine($"The word '{targets}' matches");
+                        MatchedWord matchedWord = new MatchedWord
+                        {
+                            ScrambledWord = targets,
+                            Word = words,
+                            IsMatch = true
+                        };
+                        matchedWords.Add(matchedWord);
                     }
-                    else
-                    {
-
-                         Console.WriteLine($"The word '{targets}' does not match.");
-                    }
-
                 }
-
             }
 
             return matchedWords;
