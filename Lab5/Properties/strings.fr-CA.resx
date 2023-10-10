@@ -139,7 +139,7 @@
     <value>Veuillez saisir le(s) mot(s) manuellement (séparés par des virgules si multiples): </value>
   </data>
   <data name="OptionM2" xml:space="preserve">
-    <value>Veuillez saisir un mot correspondant: </value>
+    <value>Veuillez saisir un mot a correspondre: </value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Veuillez saisir manuellement les mots brouillés manuellement ou sous forme de fichier : F - fichier / M - manuel: </value>

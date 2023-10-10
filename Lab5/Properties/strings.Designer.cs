@@ -133,7 +133,7 @@ namespace Lab5.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter a matching word:.
+        ///   Looks up a localized string similar to Enter a word to match:.
         /// </summary>
         internal static string OptionM2 {
             get {

@@ -142,7 +142,7 @@
     <value>Enter word(s) manually (separated by commas if multiple):</value>
   </data>
   <data name="OptionM2" xml:space="preserve">
-    <value>Enter a matching word:</value>
+    <value>Enter a word to match:</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Enter scrambled word(s) manually or as a file: F - file / M - manual</value>
