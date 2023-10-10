@@ -35,7 +35,6 @@ namespace WordUnscrambler
                         Console.WriteLine($"The word '{targets}' does not match.");
                     }
 
-
                 }
             }
 

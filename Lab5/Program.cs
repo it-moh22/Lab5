@@ -53,7 +53,7 @@ namespace WordUnscrambler
             try
             {
                 var filename = Console.ReadLine();
-                Console.WriteLine("enter the name of the file where to find the matching word" );
+                "enter a file to try the matchin".AskUser();
                 var filematch = Console.ReadLine();
 
                 string[] target;
@@ -107,7 +107,7 @@ namespace WordUnscrambler
             List<MatchedWord> matchedWords = _wordMatcher.Match(scrambledWords, wordList);
 
             // Call the extension method to display matched words
-            matchedWords.PrintMatchedWords();
+            
         }
 
 
