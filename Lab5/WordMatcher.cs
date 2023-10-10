@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Lab5;
 
 namespace WordUnscrambler
 {
@@ -26,7 +27,7 @@ namespace WordUnscrambler
 
                     if (isMatch)
                     {
-                         Console.WriteLine($"The word '{targets}' matches!");
+                         Console.WriteLine($"The word '{targets}' matches");
                     }
                     else
                     {

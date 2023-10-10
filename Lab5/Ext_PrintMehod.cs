@@ -12,14 +12,14 @@ namespace Lab5
     {
         public static void PrintMatchedWords(this List<MatchedWord> matchedWords)
         {
-            Console.Write("The result : ");
+            Console.WriteLine("The result : ");
             foreach (MatchedWord matchedWord in matchedWords)
             {
                 Console.WriteLine($"Scrambled Word: {matchedWord.ScrambledWord}");
                 Console.WriteLine($"Matched Word: {matchedWord.Word}");
                 Console.WriteLine($"Is Match: {matchedWord.IsMatch}");
+                Console.WriteLine(); // Add an empty line for better readability
             }
-            
         }
 
         /*public static void  PrintItem(List<MatchedWord> matchedWords)
