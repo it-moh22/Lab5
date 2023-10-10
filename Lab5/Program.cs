@@ -89,8 +89,8 @@ namespace WordUnscrambler
                     bool readSuccess2 = _fileReader.Read(filematch, out word);
                 while (!(readSuccess) || !(readSuccess2))
                 {
-                    Console.WriteLine("I dont find any of the files ");
-                    Console.WriteLine("enter a file to find words");
+                    Console.WriteLine(Lab5.Properties.strings.NotFoundFile);
+                    Console.WriteLine(Lab5.Properties.strings.ReenterFiles);
                     filename = Console.ReadLine();
                     Lab5.Properties.strings.OptionF2.AskUser();
                      filematch = Console.ReadLine();

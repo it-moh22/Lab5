@@ -132,6 +132,9 @@
   <data name="MatchedWord" xml:space="preserve">
     <value>Matched Words: </value>
   </data>
+  <data name="NotFoundFile" xml:space="preserve">
+    <value>These files cannot be found.</value>
+  </data>
   <data name="OptionF" xml:space="preserve">
     <value>Enter full path including the file name:</value>
   </data>
@@ -146,6 +149,9 @@
   </data>
   <data name="Options" xml:space="preserve">
     <value>Enter scrambled word(s) manually or as a file: F - file / M - manual</value>
+  </data>
+  <data name="ReenterFiles" xml:space="preserve">
+    <value>Enter new files:</value>
   </data>
   <data name="ReenterWords" xml:space="preserve">
     <value>Enter a new set of words:</value>

@@ -106,6 +106,15 @@ namespace Lab5.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to These files cannot be found..
+        /// </summary>
+        internal static string NotFoundFile {
+            get {
+                return ResourceManager.GetString("NotFoundFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter full path including the file name:.
         /// </summary>
         internal static string OptionF {
@@ -147,6 +156,15 @@ namespace Lab5.Properties {
         internal static string Options {
             get {
                 return ResourceManager.GetString("Options", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter new files:.
+        /// </summary>
+        internal static string ReenterFiles {
+            get {
+                return ResourceManager.GetString("ReenterFiles", resourceCulture);
             }
         }
         

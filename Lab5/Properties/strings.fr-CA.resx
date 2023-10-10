@@ -132,6 +132,9 @@
   <data name="MatchedWord" xml:space="preserve">
     <value>Mots Correspondant: </value>
   </data>
+  <data name="NotFoundFile" xml:space="preserve">
+    <value>Ces fichiers ne sont pas trouvables.</value>
+  </data>
   <data name="OptionF" xml:space="preserve">
     <value>Veuillez saisir le chemin complet incluant le nom du fichier: </value>
   </data>
@@ -146,6 +149,9 @@
   </data>
   <data name="Options" xml:space="preserve">
     <value>Veuillez saisir manuellement les mots brouillés manuellement ou sous forme de fichier : F - fichier / M - manuel: </value>
+  </data>
+  <data name="ReenterFiles" xml:space="preserve">
+    <value>Veuillez saisir de nouveaux fichiers: </value>
   </data>
   <data name="ReenterWords" xml:space="preserve">
     <value>Veuillez saisir une nouvelle série de mots: </value>
