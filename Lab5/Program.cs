@@ -57,27 +57,31 @@ namespace WordUnscrambler
 
             private static void ExecuteScrambledWordsInFileScenario()
         {
+
             try
             {
-                var filename = Console.ReadLine();
-                "enter a file to try the matchin".AskUser();
-                var filematch = Console.ReadLine();
 
-                string[] target;
-                string[] word;
-                bool readSuccess = _fileReader.Read(filename, out target);
-                bool readSuccess2= _fileReader.Read(filematch, out word);
+                {
+                    var filename = Console.ReadLine();
+                    "enter a file to try the matchin".AskUser();
+                    var filematch = Console.ReadLine();
 
-                if (readSuccess && readSuccess2)
-                {
-                    //DisplayMatchedUnscrambledWords(target, word);
-                    WordMatcher wordMatcher = new WordMatcher();
-                    wordMatcher.Match(target, word);
-                    DisplayMatchedUnscrambledWords(target, word);
-                }
-                else
-                {
-                    Console.WriteLine("Unable to read the specified file.");
+                    string[] target;
+                    string[] word;
+                    bool readSuccess = _fileReader.Read(filename, out target);
+                    bool readSuccess2 = _fileReader.Read(filematch, out word);
+
+                    if (readSuccess && readSuccess2)
+                    {
+                        //DisplayMatchedUnscrambledWords(target, word);
+                        WordMatcher wordMatcher = new WordMatcher();
+                        wordMatcher.Match(target, word);
+                        DisplayMatchedUnscrambledWords(target, word);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Unable to read the specified file.");
+                    }
                 }
             }
             catch (Exception ex)
@@ -90,16 +94,32 @@ namespace WordUnscrambler
         {
             try
             {
+
    
                 string input = Console.ReadLine();
+                Console.WriteLine("the words you want to match are: " + input.ToString());
+                Console.WriteLine("do you want to continue? (y/n) ");
+                string answer = Console.ReadLine();
+                while (answer == "n")
+                {
+                    Console.WriteLine("then re enter new words");
+                    input = Console.ReadLine();
+                    Console.WriteLine("do you want to continue? (y/n) ");
+                    answer = Console.ReadLine();
+
+                }
                 Console.WriteLine("Enter a matching word: ");
                 string matched = Console.ReadLine();
 
                 string[] inputWords = input.Split(',');
-                string[] matchedArray = matched.Split(); 
+                string[] matchedArray = matched.Split();
 
-               
-                 WordMatcher wordMatcher = new WordMatcher();
+           
+                
+                    
+
+
+                WordMatcher wordMatcher = new WordMatcher();
                  wordMatcher.Match(inputWords,matchedArray);
                 DisplayMatchedUnscrambledWords(inputWords, matchedArray);
 
