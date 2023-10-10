@@ -110,9 +110,18 @@ namespace WordUnscrambler
         {
             try
             {
-
-   
                 string input = Console.ReadLine();
+                Console.WriteLine("the words you want to match are: " + input.ToString());
+                Console.WriteLine("do you want to continue? (y/n) ");
+                string answer = Console.ReadLine();
+                while (answer == "n")
+                {
+                    Console.WriteLine("then re enter new words");
+                    input = Console.ReadLine();
+                    Console.WriteLine("do you want to continue? (y/n) ");
+                    answer = Console.ReadLine();
+
+                }
                 Console.WriteLine(Lab5.Properties.strings.OptionM2);
                 string matched = Console.ReadLine();
 
