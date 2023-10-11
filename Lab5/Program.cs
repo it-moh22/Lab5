@@ -97,12 +97,10 @@ namespace WordUnscrambler
                     if (!fileValidation)
                     {
                         var filename = Console.ReadLine();
-                      
-                      
-
                         string[] target;
                         string[] word;
                         bool readSuccess = _fileReader.Read(filename, out target);
+
                         while(!(readSuccess))
                         {
                             Console.WriteLine(Lab5.Properties.strings.NotFoundFile);
@@ -115,6 +113,7 @@ namespace WordUnscrambler
                         Lab5.Properties.strings.OptionF2.AskUser();  // extenstion method 
                         var filematch = Console.ReadLine();
                         bool readSuccess2 = _fileReader.Read(filematch, out word);
+
                         while (!(readSuccess2))
                         {
 
@@ -126,6 +125,7 @@ namespace WordUnscrambler
                             
                             readSuccess2 = _fileReader.Read(filematch, out word);
                         }
+
                         WordMatcher wordMatcher = new WordMatcher();
                         wordMatcher.Match(target, word);
                         DisplayMatchedUnscrambledWords(target, word);
@@ -140,12 +140,12 @@ namespace WordUnscrambler
 
                         }
                     
-                    else 
-                    {
+                       else 
+                       {
 
                         Environment.Exit(0);
 
-                    }
+                       }
                   }
 
                 }
@@ -166,6 +166,7 @@ namespace WordUnscrambler
                     {
 
                         string input = Console.ReadLine();
+
                         while(input== string.Empty) {
                             Console.WriteLine(Lab5.Properties.strings.emptyString);
                             input = Console.ReadLine();
@@ -173,6 +174,7 @@ namespace WordUnscrambler
                         Console.WriteLine(Lab5.Properties.strings.WordsToMatch + input.ToString());
                         Console.WriteLine(Lab5.Properties.strings.Continuation);
                         string answer = Console.ReadLine();
+
 
                         while (answer == "n")
                         {
@@ -182,8 +184,10 @@ namespace WordUnscrambler
                             answer = Console.ReadLine();
 
                         }
+
                         Console.WriteLine(Lab5.Properties.strings.OptionM2);
                         string matched = Console.ReadLine();
+
                         while (matched == string.Empty)
                         {
                             Console.WriteLine(Lab5.Properties.strings.emptyString);
@@ -241,25 +245,6 @@ namespace WordUnscrambler
 
         }
 
-        //test this didnt work
-        /*private static void DisplayMatchedUnscrambledWords(string[] scrambledWords)
-
-        {
-            string[] wordList;
-            bool readSuccess = _fileReader.Read("words.txt", out wordList);
-
-            if (readSuccess)
-            {
-                List<MatchedWord> matchedWord = _wordMatcher.Match(scrambledWords, wordList);
-
-                // Extension method to display
-                Ext_PrintMehod.PrintMatchedWords(matchedWord);
-            }
-            else
-            {
-                Console.WriteLine("Unable to read the word list file.");
-            }
-
-        }*/
+       
     }
 }
