@@ -150,6 +150,9 @@
   <data name="Options" xml:space="preserve">
     <value>Veuillez saisir manuellement les mots brouillés manuellement ou sous forme de fichier : F - fichier / M - manuel: </value>
   </data>
+  <data name="Redo" xml:space="preserve">
+    <value>Voulez-vous refaire?(y/n)</value>
+  </data>
   <data name="ReenterFiles" xml:space="preserve">
     <value>Veuillez saisir de nouveaux fichiers: </value>
   </data>

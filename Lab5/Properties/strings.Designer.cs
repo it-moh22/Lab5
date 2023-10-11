@@ -160,6 +160,15 @@ namespace Lab5.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to do you want to start over?(y/n).
+        /// </summary>
+        internal static string Redo {
+            get {
+                return ResourceManager.GetString("Redo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter new files:.
         /// </summary>
         internal static string ReenterFiles {

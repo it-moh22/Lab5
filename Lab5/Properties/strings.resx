@@ -150,6 +150,9 @@
   <data name="Options" xml:space="preserve">
     <value>Enter scrambled word(s) manually or as a file: F - file / M - manual</value>
   </data>
+  <data name="Redo" xml:space="preserve">
+    <value>do you want to start over?(y/n)</value>
+  </data>
   <data name="ReenterFiles" xml:space="preserve">
     <value>Enter new files:</value>
   </data>
