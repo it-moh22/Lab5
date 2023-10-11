@@ -11,6 +11,6 @@ namespace WordUnscrambler
         public string ScrambledWord { get; set; }
         public string Word { get; set; }
 
-        public bool IsMatch { get; set; }
+        public bool IsMatch { get; set; } // added this tho get a result of true/false for our display
     }
 }
