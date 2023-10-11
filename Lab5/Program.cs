@@ -156,7 +156,7 @@ namespace WordUnscrambler
                 string matched = Console.ReadLine();
 
                 string[] inputWords = input.Split(',');
-                string[] matchedArray = matched.Split();
+                string[] matchedArray = matched.Split(',');
 
            
                 
