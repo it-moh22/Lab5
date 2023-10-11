@@ -41,22 +41,6 @@ namespace WordUnscrambler
                 }
             }
 
-
-
-            /*if (lang.Equals("en"))
-            {
-                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-CA");
-            }
-            else if (lang.Equals("fr"))
-            {
-                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("fr-CA");
-            }
-            else
-            {
-                Console.WriteLine("This is not a valid language. Please try again.");
-                Environment.Exit(0);
-            }*/
-
             try
             {
                 bool validation = false; // Initialize to false initially
@@ -111,6 +95,7 @@ namespace WordUnscrambler
                     if (!fileValidation)
                     {
                         var filename = Console.ReadLine();
+                      
                         Lab5.Properties.strings.OptionF2.AskUser();  // extenstion method 
                         var filematch = Console.ReadLine();
 
@@ -171,6 +156,10 @@ namespace WordUnscrambler
                     {
 
                         string input = Console.ReadLine();
+                        if(input == null) {
+                            Console.WriteLine("I dont want empty, please enter new words");
+                            input = Console.ReadLine();
+                        }
                         Console.WriteLine(Lab5.Properties.strings.WordsToMatch + input.ToString());
                         Console.WriteLine(Lab5.Properties.strings.Continuation);
                         string answer = Console.ReadLine();
