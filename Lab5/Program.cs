@@ -96,24 +96,32 @@ namespace WordUnscrambler
                     {
                         var filename = Console.ReadLine();
                       
-                        Lab5.Properties.strings.OptionF2.AskUser();  // extenstion method 
-                        var filematch = Console.ReadLine();
+                      
 
                         string[] target;
                         string[] word;
                         bool readSuccess = _fileReader.Read(filename, out target);
-                        bool readSuccess2 = _fileReader.Read(filematch, out word);
-
-                        while (!(readSuccess) || !(readSuccess2))
+                        while(!(readSuccess))
                         {
                             Console.WriteLine(Lab5.Properties.strings.NotFoundFile);
                             Console.WriteLine(Lab5.Properties.strings.ReenterFiles);
                             filename = Console.ReadLine();
+                            readSuccess = _fileReader.Read(filename, out target);
+                        }
+
+                        
+                        Lab5.Properties.strings.OptionF2.AskUser();  // extenstion method 
+                        var filematch = Console.ReadLine();
+                        bool readSuccess2 = _fileReader.Read(filematch, out word);
+                        while (!(readSuccess2))
+                        {
+
+                            Console.WriteLine(Lab5.Properties.strings.NotFoundFile);
                             Lab5.Properties.strings.OptionF2.AskUser();
                             filematch = Console.ReadLine();
 
 
-                            readSuccess = _fileReader.Read(filename, out target);
+                            
                             readSuccess2 = _fileReader.Read(filematch, out word);
                         }
                         WordMatcher wordMatcher = new WordMatcher();
@@ -157,7 +165,7 @@ namespace WordUnscrambler
 
                         string input = Console.ReadLine();
                         while(input== string.Empty) {
-                            Console.WriteLine("I dont want empty, please enter new words");
+                            Console.WriteLine(Lab5.Properties.strings.emptyString);
                             input = Console.ReadLine();
                         }
                         Console.WriteLine(Lab5.Properties.strings.WordsToMatch + input.ToString());
@@ -174,6 +182,11 @@ namespace WordUnscrambler
                         }
                         Console.WriteLine(Lab5.Properties.strings.OptionM2);
                         string matched = Console.ReadLine();
+                        while (matched == string.Empty)
+                        {
+                            Console.WriteLine(Lab5.Properties.strings.emptyString);
+                            matched = Console.ReadLine();
+                        }
 
                         string[] inputWords = input.Split(',');
                         string[] matchedArray = matched.Split(',');

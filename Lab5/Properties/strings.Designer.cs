@@ -70,6 +70,15 @@ namespace Lab5.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to you wrote nothing, please reEnter.
+        /// </summary>
+        internal static string emptyString {
+            get {
+                return ResourceManager.GetString("emptyString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unable to read the specified file..
         /// </summary>
         internal static string FalseFile {
