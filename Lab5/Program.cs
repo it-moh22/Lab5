@@ -156,7 +156,7 @@ namespace WordUnscrambler
                     {
 
                         string input = Console.ReadLine();
-                        if(input == null) {
+                        while(input== string.Empty) {
                             Console.WriteLine("I dont want empty, please enter new words");
                             input = Console.ReadLine();
                         }
