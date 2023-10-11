@@ -42,20 +42,6 @@ namespace WordUnscrambler
                         break;
                 }
             }
-            //This is good but if the user gets it wrong he cant retype the input
-            /*if (lang.Equals("en"))
-            {
-                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-CA");
-            }
-            else if (lang.Equals("fr"))
-            {
-                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("fr-CA");
-            }
-            else
-            {
-                Console.WriteLine("This is not a valid language. Please try again.");
-                Environment.Exit(0);
-            }*/
 
             try
             {
@@ -96,19 +82,29 @@ namespace WordUnscrambler
             }
         }
 
+
+
+
+
             private static void ExecuteScrambledWordsInFileScenario()
         {
 
             try
             {
-                var filename = Console.ReadLine();
-                Lab5.Properties.strings.OptionF2.AskUser();  // extenstion method 
-                var filematch = Console.ReadLine();
+                bool fileValidation = false;
+                while (!fileValidation)
+                {
+                    if (!fileValidation)
+                    {
+                        var filename = Console.ReadLine();
+                      
+                        Lab5.Properties.strings.OptionF2.AskUser();  // extenstion method 
+                        var filematch = Console.ReadLine();
 
                     string[] target;
                     string[] word;
-                    bool readSuccess = _fileReader.Read(filename, out target); //the output will be the target
-                    bool readSuccess2 = _fileReader.Read(filematch, out word);  //the output will be the target
+                    bool readSuccess = _fileReader.Read(filename, out target);
+                    bool readSuccess2 = _fileReader.Read(filematch, out word);
                 while (!(readSuccess) || !(readSuccess2))
                 {
                     Console.WriteLine(Lab5.Properties.strings.NotFoundFile);
@@ -117,18 +113,33 @@ namespace WordUnscrambler
                     Lab5.Properties.strings.OptionF2.AskUser();
                      filematch = Console.ReadLine();
 
-                  
-                     readSuccess = _fileReader.Read(filename, out target);
-                     readSuccess2 = _fileReader.Read(filematch, out word);
+
+                            readSuccess = _fileReader.Read(filename, out target);
+                            readSuccess2 = _fileReader.Read(filematch, out word);
+                        }
+                        WordMatcher wordMatcher = new WordMatcher();
+                        wordMatcher.Match(target, word);
+                        DisplayMatchedUnscrambledWords(target, word);
+
+                        Console.WriteLine(Lab5.Properties.strings.Redo);
+                        String answer2 = Console.ReadLine();
+
+                        if (answer2 == "y")
+                        {
+                            fileValidation = false;
+                            Console.WriteLine(Lab5.Properties.strings.OptionF);
+
+                        }
+                    
+                    else 
+                    {
+
+                        Environment.Exit(0);
+
+                    }
+                  }
+
                 }
-
-
-                //DisplayMatchedUnscrambledWords(target, word);
-                WordMatcher wordMatcher = new WordMatcher();
-                    wordMatcher.Match(target, word);
-                    DisplayMatchedUnscrambledWords(target, word);
-                
-                
             }
             catch (Exception ex)
             {
@@ -140,32 +151,56 @@ namespace WordUnscrambler
         {
             try
             {
-                string input = Console.ReadLine();
-                Console.WriteLine(Lab5.Properties.strings.WordsToMatch + input.ToString());
-                Console.WriteLine(Lab5.Properties.strings.Continuation);
-                string answer = Console.ReadLine();
-                while (answer == "n")
-                {
-                    Console.WriteLine(Lab5.Properties.strings.ReenterWords);
-                    input = Console.ReadLine();
-                    Console.WriteLine(Lab5.Properties.strings.Continuation);
-                    answer = Console.ReadLine();
+                bool manualValidation = false;
+                while (!manualValidation) {
+                    if (!manualValidation)
+                    {
+
+                        string input = Console.ReadLine();
+                        while(input== string.Empty) {
+                            Console.WriteLine("I dont want empty, please enter new words");
+                            input = Console.ReadLine();
+                        }
+                        Console.WriteLine(Lab5.Properties.strings.WordsToMatch + input.ToString());
+                        Console.WriteLine(Lab5.Properties.strings.Continuation);
+                        string answer = Console.ReadLine();
+
+                        while (answer == "n")
+                        {
+                            Console.WriteLine(Lab5.Properties.strings.ReenterWords);
+                            input = Console.ReadLine();
+                            Console.WriteLine(Lab5.Properties.strings.Continuation);
+                            answer = Console.ReadLine();
+
+                        }
+                        Console.WriteLine(Lab5.Properties.strings.OptionM2);
+                        string matched = Console.ReadLine();
+
+                        string[] inputWords = input.Split(',');
+                        string[] matchedArray = matched.Split(',');
+
+                        WordMatcher wordMatcher = new WordMatcher();
+                        wordMatcher.Match(inputWords, matchedArray);
+                        DisplayMatchedUnscrambledWords(inputWords, matchedArray);
+
+                        Console.WriteLine(Lab5.Properties.strings.Redo);
+                        String answer2 = Console.ReadLine();
+
+                        if (answer2 == "y")
+                        {
+                            manualValidation = false;
+                            Console.WriteLine(Lab5.Properties.strings.OptionM);
+                        }
+
+
+                        else
+                        {
+                            Environment.Exit(0);
+
+                        }
+                    }
 
                 }
-                Console.WriteLine(Lab5.Properties.strings.OptionM2);
-                string matched = Console.ReadLine();
-
-                string[] inputWords = input.Split(',');
-                string[] matchedArray = matched.Split();
-
-           
-                
-         
-               
-                
-                WordMatcher wordMatcher = new WordMatcher();
-                 wordMatcher.Match(inputWords,matchedArray);
-                DisplayMatchedUnscrambledWords(inputWords, matchedArray);
 
             }
             catch (Exception ex)

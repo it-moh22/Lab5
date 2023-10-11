@@ -15,12 +15,12 @@ namespace WordUnscrambler
 
             foreach (string targets in target)
             {
-                char[] targetsChar = targets.ToCharArray();
+                char[] targetsChar = targets.Trim().ToCharArray();
                 Array.Sort(targetsChar);
 
                 foreach (string words in word)
                 {
-                    char[] wordsChar = words.ToCharArray();
+                    char[] wordsChar = words.Trim().ToCharArray();
                     Array.Sort(wordsChar);
 
                     bool isMatch = targetsChar.SequenceEqual(wordsChar); //to verify if they are in the same order
