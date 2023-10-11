@@ -105,10 +105,10 @@ namespace WordUnscrambler
 
             try
             {
-                bool manualValidation = false;
-                while (!manualValidation)
+                bool fileValidation = false;
+                while (!fileValidation)
                 {
-                    if (!manualValidation)
+                    if (!fileValidation)
                     {
                         var filename = Console.ReadLine();
                         Lab5.Properties.strings.OptionF2.AskUser();  // extenstion method 
@@ -140,7 +140,7 @@ namespace WordUnscrambler
 
                         if (answer2 == "y")
                         {
-                            manualValidation = false;
+                            fileValidation = false;
                             Console.WriteLine(Lab5.Properties.strings.OptionF);
 
                         }
