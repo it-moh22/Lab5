@@ -115,6 +115,15 @@ namespace Lab5.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to you wrote nothing, please reEnter.
+        /// </summary>
+        internal static string noString {
+            get {
+                return ResourceManager.GetString("noString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to These files cannot be found..
         /// </summary>
         internal static string NotFoundFile {
@@ -124,7 +133,7 @@ namespace Lab5.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter full path including the file name:.
+        ///   Looks up a localized string similar to Enter full path including the file name( Ex: words.txt ) :.
         /// </summary>
         internal static string OptionF {
             get {
@@ -133,7 +142,7 @@ namespace Lab5.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter a file to try the matching: .
+        ///   Looks up a localized string similar to Enter a file to try the matching( Ex: target.txt ) : .
         /// </summary>
         internal static string OptionF2 {
             get {

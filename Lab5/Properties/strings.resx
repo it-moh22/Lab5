@@ -135,14 +135,17 @@
   <data name="MatchedWord" xml:space="preserve">
     <value>Matched Words: </value>
   </data>
+  <data name="noString" xml:space="preserve">
+    <value>you wrote nothing, please reEnter</value>
+  </data>
   <data name="NotFoundFile" xml:space="preserve">
     <value>These files cannot be found.</value>
   </data>
   <data name="OptionF" xml:space="preserve">
-    <value>Enter full path including the file name:</value>
+    <value>Enter full path including the file name( Ex: words.txt ) :</value>
   </data>
   <data name="OptionF2" xml:space="preserve">
-    <value>Enter a file to try the matching: </value>
+    <value>Enter a file to try the matching( Ex: target.txt ) : </value>
   </data>
   <data name="OptionM" xml:space="preserve">
     <value>Enter word(s) manually (separated by commas if multiple):</value>

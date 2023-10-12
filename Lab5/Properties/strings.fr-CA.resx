@@ -135,14 +135,17 @@
   <data name="MatchedWord" xml:space="preserve">
     <value>Mots Correspondant: </value>
   </data>
+  <data name="noString" xml:space="preserve">
+    <value>Vous n'avez rien ecris, veuillez reEcrire des mots</value>
+  </data>
   <data name="NotFoundFile" xml:space="preserve">
     <value>Ces fichiers ne sont pas trouvables.</value>
   </data>
   <data name="OptionF" xml:space="preserve">
-    <value>Veuillez saisir le chemin complet incluant le nom du fichier: </value>
+    <value>Veuillez saisir le chemin complet incluant le nom du fichier ( Ex: words.txt ) : </value>
   </data>
   <data name="OptionF2" xml:space="preserve">
-    <value>Veuillez saisir un fichier a correspondre: </value>
+    <value>Veuillez saisir un fichier a correspondre ( Ex: target.txt ) : </value>
   </data>
   <data name="OptionM" xml:space="preserve">
     <value>Veuillez saisir le(s) mot(s) manuellement (séparés par des virgules si multiples): </value>
