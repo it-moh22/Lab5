@@ -21,7 +21,7 @@ namespace WordUnscrambler
 
             while (!confirmation)
             {
-                Console.WriteLine("Choose a language between the following: 'en/enter' for english or 'fr' for french ");
+                Console.WriteLine("Choose a language between the following: 'en' for english or 'fr' for french ");
                 String lang = Console.ReadLine();
 
                 switch (lang.ToUpper()) //We did almost the same switch case of
@@ -37,8 +37,8 @@ namespace WordUnscrambler
                         confirmation = true; 
                         break;
                     default:
-                        Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-CA");
-                        confirmation = true;
+                        Console.WriteLine("This is not a valid language. Please try again.");
+                        confirmation= false; //If it reachs this part the boolean will activate the loop again
                         break;
                 }
             }
