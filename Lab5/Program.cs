@@ -217,6 +217,7 @@ namespace WordUnscrambler
 
             foreach (MatchedWord matchedWord in matchedWords)
             {
+                Console.WriteLine(" ");
                 Console.WriteLine(Lab5.Properties.strings.ScrambledWord + matchedWord.ScrambledWord);
                 Console.WriteLine(Lab5.Properties.strings.MatchedWord + matchedWord.Word);
                 Console.WriteLine(Lab5.Properties.strings.IsMatch +  matchedWord.IsMatch);
